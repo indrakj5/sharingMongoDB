@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/digitalSkola');
+const { Schema } = require('mongoose');
 
-const schema = new mongoose.Schema({
+const schema = new Schema({
   name: String,
   age: Number,
   hobby: String,
