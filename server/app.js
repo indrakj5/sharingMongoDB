@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express    = require('express');
 const app        = express();
 const port       = 3000;
@@ -14,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const url = `mongodb+srv://harynp:putra2910@cluster0.wq835.mongodb.net/digitalSkola?retryWrites=true&w=majority`;
+const url = `mongodb+srv://harynp:${process.env.DB_PASSWORD}@cluster0.wq835.mongodb.net/digitalSkola?retryWrites=true&w=majority`;
 mongoose.connect(url).then(() => {
   console.log("DB Connected");
 });
