@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const url = `mongodb://localhost:27017/databaseQ`;
+const url = `mongodb+srv://harynp:putra2910@cluster0.wq835.mongodb.net/digitalSkola?retryWrites=true&w=majority`;
 mongoose.connect(url).then(() => {
   console.log("DB Connected");
 });
@@ -26,7 +26,7 @@ mongoose.connection.on("error", err => {
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
-app.use('/users', users);
+app.use('/', users);
 /* CEK PORT CONNECTION */
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)

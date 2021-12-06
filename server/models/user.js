@@ -7,4 +7,4 @@ const schema = new Schema({
   hobby: String,
 });
 
-module.exports = mongoose.model('user',schema);
+module.exports = mongoose.model('users',schema);
