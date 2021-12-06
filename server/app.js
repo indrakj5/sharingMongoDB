@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const express    = require('express');
 const app        = express();
 const port       = 3000;
@@ -8,14 +8,14 @@ const users      = require('./routes/user');
 const cookieParser = require("cookie-parser");
 const mongoose   = require('mongoose');
 
-app.use(cors())
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-const url = `mongodb+srv://harynp:${process.env.DB_PASSWORD}@cluster0.wq835.mongodb.net/digitalSkola?retryWrites=true&w=majority`;
+const url = process.env.DB_MONGO_ATLAS;
 mongoose.connect(url).then(() => {
   console.log("DB Connected");
 });
