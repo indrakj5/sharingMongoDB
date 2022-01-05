@@ -4,7 +4,8 @@
   "description": "Sharing Express JS + MongoDB",
   "main": "index.js",
   "scripts": {
-    "test": "yarn start"
+    "test": "yarn start",
+    "start": "node app"
   },
   "repository": {
     "type": "git",
