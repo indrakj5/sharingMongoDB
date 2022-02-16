@@ -11,6 +11,16 @@ class UserController {
       res.status(500).send(err)
     })
   };
+
+  static getUserId (req,res) {
+    UserModel.find({_id : req.params.id})
+    .then(data => {
+      res.status(200).send(data)
+    })
+    .catch(err => {
+      res.status(500).send(err)
+    })
+  };
  
   static postUser (req,res) {
     UserModel.create({
